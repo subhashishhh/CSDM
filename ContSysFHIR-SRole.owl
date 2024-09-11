@@ -6282,7 +6282,7 @@ NOTE 2 to entry: resources may be reusable, renewable or consumable.</skos:note>
     <owl:Class rdf:about="https://contsys.org/concept/sharable_data_repository">
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/data_repository"/>
         <rdfs:comment xml:lang="en">data repository containing exclusively electronic health record extracts, accessible for duly authorized healthcare actors independent of their organizational affiliation and placed under the custody of a healthcare actor</rdfs:comment>
-        <rdfs:label xml:lang="en">sharableDaraRepository</rdfs:label>
+        <rdfs:label xml:lang="en">sharableDataRepository</rdfs:label>
         <skos:note xml:lang="en">NOTE 1 A sharable data repository has to be placed under the custody of a healthcare actor in order to assure and maintain its consistency.
 
 NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electronic health record containing exclusively sharable data, placed under the custody of a healthcare party, to whom a continuity facilitator mandate has been delivered&apos;.</skos:note>
