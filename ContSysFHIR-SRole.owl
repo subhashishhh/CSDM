@@ -19,9 +19,11 @@
         <dc:contributor xml:lang="en">Pamela Hussey</dc:contributor>
         <dc:creator xml:lang="en">Subhashis Das</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-14T18:03:59Z</dc:date>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-14T18:03:59Z</dc:date>
         <dc:title xml:lang="en">Formal Ontology for Continuity of Care</dc:title>
         <terms:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://creativecommons.org/licenses/by-sa/4.0/</terms:license>
         <rdfs:comment xml:lang="en">A formal ontology of concepts for care process modelling (Contsys). A system of concepts for the continuity of care. A visualisation of a model conforming to International Standard EN ISO 13940:2016. And extended concepts related to soical care.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">Version 2 (2025)</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -70,7 +72,7 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">database_cross_reference</rdfs:label>
+        <rdfs:label>database_cross_reference</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -2954,7 +2956,7 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://build.fhir.org/medicationrequest-definitions.html#MedicationRequest</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.bioontology.org/ontology/SNOMEDCT/182888003</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">MedicationRequest</rdfs:label>
         <rdfs:label xml:lang="es">Solicitud de medicación</rdfs:label>
     </owl:Class>
@@ -2964,20 +2966,36 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Agentive-Social-Object -->
 
     <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Agentive-Social-Object">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Social-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#SocialObject"/>
         <rdfs:label xml:lang="en">agentiveSocialObject</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event -->
+    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Artifact -->
 
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event">
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.bioontology.org/ontology/SNOMEDCT/272379006</oboInOwl:hasDbXref>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An occurrence-type is stative or eventive according  to whether it holds of the mereological sum of two of its instances, i.e. if it is cumulative or not. A sitting occurrence is stative since the sum of two sittings is still a sitting occurrence.In general, events differ from situations because they are not assumed to have a description from which they depend. They can be sequenced by some course, but they do not require a description as a unifying criterion.On the other hand, at any time, one can conceive a description that asserts the constraints by which an event of a certian type is such, and in this case, it becomes a situation.Since the decision of designing an explicit description that unifies a perdurant depends on context, task, interest, application, etc., when aligning an ontology do DLP, there can be indecision on where to align an event-oriented class. For example, in the WordNet alignment, we have decided to put only some physical events under &apos;event&apos;, e.g. &apos;discharge&apos;, in order to stress the social orientedness of DLP. But whereas we need to talk explicitly of the criteria by which we conceive discharge events, these will be put under &apos;situation&apos;.Similar considerations are made for the other types of perdurants in DOLCE.A different notion of event (dealing with change) is currently investigated for further developments: being &apos;achievement&apos;, &apos;accomplishment&apos;, &apos;state&apos;, &apos;event&apos;, etc. can be also considered &apos;aspects&apos; of processes or of parts of them. For example, the same process &apos;rock erosion in the Sinni valley&apos; can be conceptualized as an accomplishment (what has brought the current state that e.g. we are trying to explain), as an achievement (the erosion process as the result of a previous accomplishment), as a state (if we collapse the time interval of the erosion into a time point), or as an event (what has changed our focus from a state to another).In the erosion case, we could have good motivations to shift from one aspect to another: a) causation focus, b) effectual focus, c) condensation d) transition (causality).If we want to consider all the aspects of a process together, we need to postulate a unifying descriptive set of criteria (i.e. a &apos;description&apos;), according to which that process is circumstantiated in a &apos;situation&apos;. The different aspects will arise as a parts of a same situation.</rdfs:comment>
-        <rdfs:comment xml:lang="en">something that happens at a given place and time</rdfs:comment>
-        <rdfs:label xml:lang="en">event</rdfs:label>
-        <rdfs:label xml:lang="es">evento</rdfs:label>
+    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Artifact">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#PhysicalObject"/>
+        <rdfs:label xml:lang="es">artefacto</rdfs:label>
+        <rdfs:label xml:lang="en">artifact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Biological-Object -->
+
+    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Biological-Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#PhysicalObject"/>
+        <rdfs:label xml:lang="en">biologicalObject</rdfs:label>
+        <rdfs:label xml:lang="es">objeto biológico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Group -->
+
+    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Group">
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Society"/>
     </owl:Class>
     
 
@@ -2991,33 +3009,14 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     
 
 
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object -->
-
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Non-Physical-Object"/>
-        <rdfs:comment xml:lang="en">AKA &quot;internal description&quot;. Mental objects are dependent on an intentional agent</rdfs:comment>
-        <rdfs:label xml:lang="en">mentalObject</rdfs:label>
-        <rdfs:label xml:lang="es">objeto mental</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Natural-Person -->
 
     <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Natural-Person">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Object"/>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_IE_2024_04_01:125676002</oboInOwl:hasDbXref>
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Biological-Object"/>
+        <oboInOwl:hasDbXref>SNOMEDCT_IE_2024_04_01:125676002</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">human being regarded as an individual</rdfs:comment>
         <rdfs:label xml:lang="en">person</rdfs:label>
         <rdfs:label xml:lang="es">persona</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Non-Physical-Object -->
-
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Non-Physical-Object">
-        <rdfs:label xml:lang="en">nonPhysicalObject</rdfs:label>
     </owl:Class>
     
 
@@ -3033,22 +3032,10 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     
 
 
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Object -->
+    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Place -->
 
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Object">
-        <rdfs:label xml:lang="es">objeto físico</rdfs:label>
-        <rdfs:label xml:lang="en">physicalObject</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Process -->
-
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Process">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Stative"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Within stative occurrences, we distinguish between states and processes     according to homeomericity: sitting is classified as a state but running     is classified as a process, since there are (very short) temporal parts of     a running that are not themselves runnings. In general, processes differ     from situations because they are not assumed to have a description from     which they depend. They can be sequenced by some course, but they do not     require a description as a unifying criterion. On the other hand, at any     time, one can conceive a description that asserts the constraints by which     a process of a certian type is such, and in this case, it becomes a     situation. Since the decision of designing an explicit description that     unifies a perdurant depends on context, task, interest, application, etc.,     when aligning an ontology do DLP, there can be indecision on where to     align a process-oriented class. For example, in the WordNet alignment, we     have decided to put only some physical processes under &apos;process&apos;, e.g.     &apos;organic process&apos;, in order to stress the social orientedness of DLP. But     whereas we need to talk explicitly of the criteria by which we conceive     organic processes, these will be put under &apos;situation&apos;. Similar     considerations are made for the other types of perdurants in DOLCE. A     different notion of event (dealing with change) is currently investigated     for further developments: being &apos;achievement&apos;, &apos;accomplishment&apos;, &apos;state&apos;,     &apos;event&apos;, etc. can be also considered &apos;aspects&apos; of processes or of parts of     them. For example, the same process &apos;rock erosion in the Sinni valley&apos; can     be conceptualized as an accomplishment (what has brought the current state     that e.g. we are trying to explain), as an achievement (the erosion     process as the result of a previous accomplishment), as a state (if we     collapse the time interval of the erosion into a time point), or as an     event (what has changed our focus from a state to another). In the erosion     case, we could have good motivations to shift from one aspect to another:     a) causation focus, b) effectual focus, c) condensation d) transition     (causality). If we want to consider all the aspects of a process together,     we need to postulate a unifying descriptive set of criteria (i.e. a     &apos;description&apos;), according to which that process is circumstantiated in a     &apos;situation&apos;. The different aspects will arise as a parts of a same situation.</rdfs:comment>
-        <rdfs:comment xml:lang="en">set of interrelated or interacting activities that use inputs to deliver an intended result</rdfs:comment>
-        <rdfs:label xml:lang="en">process</rdfs:label>
+    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Place">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#PhysicalObject"/>
     </owl:Class>
     
 
@@ -3062,15 +3049,6 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     
 
 
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Social-Object -->
-
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Social-Object">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Non-Physical-Object"/>
-        <rdfs:label xml:lang="en">socialObject</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Socially-Constructed-Person -->
 
     <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Socially-Constructed-Person">
@@ -3080,20 +3058,19 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     
 
 
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#State -->
+    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Society -->
 
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#State">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Stative"/>
-        <rdfs:label xml:lang="en">state</rdfs:label>
+    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Society">
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Agentive-Social-Object"/>
     </owl:Class>
     
 
 
-    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Stative -->
+    <!-- http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Time-Interval -->
 
-    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Stative">
-        <rdfs:comment xml:lang="en">expressing a state or condition rather than an activity or event</rdfs:comment>
-        <rdfs:label xml:lang="en">stative</rdfs:label>
+    <owl:Class rdf:about="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Time-Interval">
+        <rdfs:label xml:lang="es">intervalo de tiempo</rdfs:label>
+        <rdfs:label xml:lang="en">timeInterval</rdfs:label>
     </owl:Class>
     
 
@@ -3135,12 +3112,28 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     
 
 
+    <!-- http://purl.org/net/for-coc#healthcareOrganization -->
+
+    <owl:Class rdf:about="http://purl.org/net/for-coc#healthcareOrganization">
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_organization"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/for-coc#location -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#location">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Object"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Place"/>
         <rdfs:label xml:lang="en">location</rdfs:label>
         <rdfs:label xml:lang="es">ubicación</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/for-coc#mentalHealthSupportGroup -->
+
+    <owl:Class rdf:about="http://purl.org/net/for-coc#mentalHealthSupportGroup">
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_organization"/>
     </owl:Class>
     
 
@@ -3148,7 +3141,7 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     <!-- http://purl.org/net/for-coc#organizationRole -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#organizationRole">
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DnS#role"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
     </owl:Class>
     
 
@@ -3156,7 +3149,23 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     <!-- http://purl.org/net/for-coc#personRole -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#personRole">
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DnS#role"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/for-coc#pointOfCare -->
+
+    <owl:Class rdf:about="http://purl.org/net/for-coc#pointOfCare">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/for-coc#location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/for-coc#socialCareOrganization -->
+
+    <owl:Class rdf:about="http://purl.org/net/for-coc#socialCareOrganization">
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_organization"/>
     </owl:Class>
     
 
@@ -3164,7 +3173,7 @@ NOTE 2 This DATA_VALUE specialization is equivalent to ISO 21090:2011 PQ data ty
     <!-- http://purl.org/net/for-coc#socialCareProcess -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#socialCareProcess">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Process"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Process"/>
         <rdfs:comment xml:lang="en">healthcare process encompassing all social care provider activities that addresses identified or specified social needs</rdfs:comment>
         <skos:note xml:lang="en">NOTE 1 As such, a social care process is a set of interrelated or interacting social care activities, which are performed for a subject of care with one or more social needs or vulnerable conditions 
 
@@ -3183,10 +3192,18 @@ NOTE 3 In a social care process a subject of care and health care professional (
     
 
 
+    <!-- http://purl.org/net/for-coc#socialEnvironment -->
+
+    <owl:Class rdf:about="http://purl.org/net/for-coc#socialEnvironment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#State"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/for-coc#socialNeed -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#socialNeed">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#State"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#State"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isConsideredDuring"/>
@@ -3200,6 +3217,14 @@ NOTE 3 In a social care process a subject of care and health care professional (
     
 
 
+    <!-- http://purl.org/net/for-coc#socialProfessional -->
+
+    <owl:Class rdf:about="http://purl.org/net/for-coc#socialProfessional">
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_personnel"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/for-coc#socialRecord -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#socialRecord">
@@ -3207,8 +3232,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">data repository regarding the social care of a subject of care</rdfs:comment>
@@ -3219,12 +3243,11 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- http://purl.org/net/for-coc#social_care_activity -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#social_care_activity">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPerformedFor"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">activity intended to improve health state mitigating or removing factors related to social determinants of health</rdfs:comment>
@@ -3247,7 +3270,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- http://purl.org/net/for-coc#socialcareActivityElement -->
 
     <owl:Class rdf:about="http://purl.org/net/for-coc#socialcareActivityElement">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:comment xml:lang="en">element of social care activity that addresses one type of purpose</rdfs:comment>
         <rdfs:label xml:lang="es">Elemento de actividad de atención social</rdfs:label>
         <skos:note xml:lang="en">social care activity is a complex concept that can be subdivided in elements that represent different purposes with the action. The different purposes could be direct (social care investigation and social care intervention that directly involves the subject of care) or indirect (social care needs assessment, social care evaluation, social care documenting or social care activity management that do not necessarily directly involve the subject of care).</skos:note>
@@ -3265,11 +3288,12 @@ NOTE 3 In a social care process a subject of care and health care professional (
     
 
 
-    <!-- http://www.loa-cnr.it/ontologies/DnS#role -->
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role -->
 
-    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DnS#role">
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role">
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Agentive-Social-Object"/>
         <rdfs:comment xml:lang="en">Also known as &apos;functional role&apos;. A concept that classifies (in particular, it is &apos;played by&apos;) endurants, as used in some description. Roles are the descriptive counterpart of endurants, and, as endurants participate in perdurants, they usually have courses as modal targets (see). The typology of roles is still preliminary.</rdfs:comment>
-        <rdfs:label xml:lang="es">papel</rdfs:label>
+        <rdfs:label xml:lang="es">parte</rdfs:label>
         <rdfs:label xml:lang="en">role</rdfs:label>
     </owl:Class>
     
@@ -3278,19 +3302,17 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/adverse_event -->
 
     <owl:Class rdf:about="https://contsys.org/concept/adverse_event">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#influences"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/adverse_event_management"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/adverse_event_management"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.hl7.org/fhir/adverseevent-definitions.html#AdverseEvent</oboInOwl:hasDbXref>
@@ -3314,7 +3336,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/appointment -->
 
     <owl:Class rdf:about="https://contsys.org/concept/appointment">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:comment xml:lang="en">arrangement to meet someone at a particular time and place</rdfs:comment>
         <rdfs:label xml:lang="en">appointment</rdfs:label>
         <rdfs:label xml:lang="es">cita</rdfs:label>
@@ -3325,7 +3347,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/authorization_by_law -->
 
     <owl:Class rdf:about="https://contsys.org/concept/authorization_by_law">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:comment xml:lang="en">provision in legislation that in certain circumstances may overrule the need for informed consent</rdfs:comment>
         <rdfs:label xml:lang="en">authorizationByLaw</rdfs:label>
     </owl:Class>
@@ -3335,7 +3357,13 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/automatedCare -->
 
     <owl:Class rdf:about="https://contsys.org/concept/automatedCare">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#initiatedDuring"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#resultsIn"/>
@@ -3350,16 +3378,8 @@ NOTE 3 In a social care process a subject of care and health care professional (
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#initiatedDuring"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#terminatedDuring"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">method of delivering healthcare initiated by a responsible healthcare actor and thereafter delivered automatically by an automatic medical device</rdfs:comment>
@@ -3391,6 +3411,12 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <owl:Class rdf:about="https://contsys.org/concept/careProfessional">
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_personnel"/>
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_provider"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_professional_entitlement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasDetermined"/>
@@ -3463,14 +3489,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_needs_assessment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_professional_entitlement"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_IE_2020_03_09:223366009</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_IE_2020_03_09:223366009</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">healthcare personnel having a healthcare professional entitlement recognized in a given jurisdiction</rdfs:comment>
         <rdfs:label xml:lang="es">profesional sanitario</rdfs:label>
     </owl:Class>
@@ -3504,11 +3523,23 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/care_activity -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_activity">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#aggregationOf"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity_element"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#componentOf"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/adverse_event_management"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#componentOf"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activities_bundle"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3525,6 +3556,24 @@ NOTE 3 In a social care process a subject of care and health care professional (
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#componentOf"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPerformedDuring"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity_period"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPerformedFor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isRecordedIn"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record"/>
             </owl:Restriction>
@@ -3537,51 +3586,14 @@ NOTE 3 In a social care process a subject of care and health care professional (
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#aggregationOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity_element"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_resource"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_resource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#targets"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_goal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPerformedDuring"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity_period"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPerformedFor"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#componentOf"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activities_bundle"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#componentOf"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_goal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">activity intended directly or indirectly to improve or maintain a health state</rdfs:comment>
@@ -3598,8 +3610,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#componentOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">health related period during which a healthcare activity is planned but not started</rdfs:comment>
@@ -3612,12 +3623,11 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/care_activity_directory -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_activity_directory">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#includes"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_provider_activity"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_provider_activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">directory of the healthcare activities offered by a healthcare provider</rdfs:comment>
@@ -3629,7 +3639,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/care_activity_element -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_activity_element">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:comment xml:lang="en">element of healthcare activity that addresses one type of purpose</rdfs:comment>
         <rdfs:label xml:lang="en">careActivityElement</rdfs:label>
         <rdfs:label xml:lang="es">elemento de actividad sanitaria</rdfs:label>
@@ -3644,16 +3654,14 @@ NOTE 3 In a social care process a subject of care and health care professional (
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_activity_element"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#manages"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#changesStatusOfHealthcareActivitiesIn"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_plan"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#changesStatusOfHealthcareActivitiesIn"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_plan"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#manages"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity element during which the status of healthcare activities in a care plan are changed</rdfs:comment>
@@ -3667,7 +3675,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/care_activity_mandate -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_activity_mandate">
-        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_matter"/>
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_mandate"/>
         <rdfs:comment xml:lang="en">healthcare mandate assigning the right and obligation to perform specific healthcare activities</rdfs:comment>
         <rdfs:label xml:lang="en">careActivityMandate</rdfs:label>
     </owl:Class>
@@ -3681,8 +3689,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#takesPlaceDuring"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_appointment"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_appointment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">time interval during which healthcare activities are performed for a subject of care</rdfs:comment>
@@ -3699,15 +3706,13 @@ NOTE 3 In a social care process a subject of care and health care professional (
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#componentOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/episode_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/episode_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#partOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity_period"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity_period"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">part of a healthcare activity period during which one health issue is specifically addressed</rdfs:comment>
@@ -3719,7 +3724,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
     <!-- https://contsys.org/concept/care_actor -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_actor">
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DnS#role"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#applies"/>
@@ -3729,7 +3734,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#assigns"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3759,7 +3764,7 @@ NOTE 3 In a social care process a subject of care and health care professional (
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#identifiesOrStates"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3778,6 +3783,12 @@ NOTE 3 In a social care process a subject of care and health care professional (
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#makesDecisionsAssistedBy"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/clinical_guideline"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#participatesIn"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3841,13 +3852,6 @@ NOTE 3 In a social care process a subject of care and health care professional (
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_information_request"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#participatesIn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">organization or person participating in healthcare</rdfs:comment>
         <rdfs:label xml:lang="es">actor de salud</rdfs:label>
         <rdfs:label xml:lang="en">careActor</rdfs:label>
@@ -3861,12 +3865,11 @@ NOTE 3 In EN 13940-1:2007 healthcare party was the preferred term for this conce
     <!-- https://contsys.org/concept/care_administration -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_administration">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#supports"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">administrative activities related to healthcare processes</rdfs:comment>
@@ -3883,15 +3886,13 @@ NOTE 3 In EN 13940-1:2007 healthcare party was the preferred term for this conce
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAppointmentFor"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/contact"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/contact"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isScheduledIn"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_plan"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_plan"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">appointment for a contact</rdfs:comment>
@@ -3915,12 +3916,11 @@ NOTE 3 In EN 13940-1:2007 healthcare party was the preferred term for this conce
     <!-- https://contsys.org/concept/care_commitment -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_commitment">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#relatesToTheProvisionOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">acceptance of a healthcare mandate by the healthcare actor to whom it is assigned</rdfs:comment>
@@ -3948,8 +3948,7 @@ NOTE 3 In EN 13940-1:2007 healthcare party was the preferred term for this conce
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#maintains"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_record"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity element where health records are created or maintained</rdfs:comment>
@@ -3966,8 +3965,7 @@ NOTE 3 In EN 13940-1:2007 healthcare party was the preferred term for this conce
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#evaluatesAspectsOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity element where aspects of at least one other healthcare activity element is evaluated</rdfs:comment>
@@ -3983,7 +3981,7 @@ NOTE 2 See also clinical process outcome evaluation.</skos:note>
     <!-- https://contsys.org/concept/care_information -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_information">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:comment xml:lang="en">information about a person, relevant to his or her healthcare</rdfs:comment>
         <rdfs:label xml:lang="en">careInformation</rdfs:label>
     </owl:Class>
@@ -3997,8 +3995,7 @@ NOTE 2 See also clinical process outcome evaluation.</skos:note>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isImportedInto"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/professional_health_record"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/professional_health_record"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare information that is a candidate for import into a professional health record after a healthcare professional has confirmed its clinical relevance to that professional health record</rdfs:comment>
@@ -4013,15 +4010,14 @@ NOTE 2 See also clinical process outcome evaluation.</skos:note>
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_activity_element"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#reveals"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/observed_condition"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#clarifies"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_state"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#clarifies"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_state"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#reveals"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/observed_condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity element with the intention to clarify one or more health conditions of a subject of care</rdfs:comment>
@@ -4034,21 +4030,32 @@ NOTE 2 Some primary healthcare investigations can sometimes have an intended or 
     
 
 
-    <!-- https://contsys.org/concept/care_matter -->
+    <!-- https://contsys.org/concept/care_mandate -->
 
-    <owl:Class rdf:about="https://contsys.org/concept/care_matter">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#State"/>
+    <owl:Class rdf:about="https://contsys.org/concept/care_mandate">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#derivesFrom"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#impliesAccessTo"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAssignedTo"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_actor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4072,48 +4079,30 @@ NOTE 2 Some primary healthcare investigations can sometimes have an intended or 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#regulates"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_process"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAssignedTo"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_actor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_commitment"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/authorization_by_law"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/authorization_by_law"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_commitment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/informed_consent"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/informed_consent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">mandate (commission) based on a commitment and either an informed consent or an authorization by law, defining the rights and obligations of one healthcare actor with regard to his involvement in healthcare processes performed for a specific subject of care</rdfs:comment>
         <rdfs:comment xml:lang="en">representation of a matter related to the health of a subject of care and/or the provision of healthcare to that subject of care, as identified by one or more healthcare actors</rdfs:comment>
-        <rdfs:label xml:lang="en">careMatter</rdfs:label>
+        <rdfs:label xml:lang="en">careMandate</rdfs:label>
         <skos:note xml:lang="en">NOTE 1 Healthcare matter is a very broad and flexible concept that includes anything related to the health or the healthcare of a subject of care. This means that health conditions, healthcare activities, health problems, the result of healthcare activities, etc. all are possible to be identified as healthcare matters. Thereby healthcare matter might have several specializations and further associations.
 NOTE 2 According to this definition, a healthcare matter can represent a disease, an illness or another kind of health condition. In addition a healthcare matter may represent, for example, a request for a procedure (therapeutic or preventive) by the subject of care or another healthcare actor.
 NOTE 3 Concepts described and/or identified in a clinical terminology may represent types of healthcare matter.
@@ -4143,8 +4132,7 @@ NOTE 4 Other specializations of this concept than those included in this Interna
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_quality_management"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_quality_management"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare provider having an organization role</rdfs:comment>
@@ -4157,7 +4145,7 @@ NOTE 4 Other specializations of this concept than those included in this Interna
     <!-- https://contsys.org/concept/care_period_mandate -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_period_mandate">
-        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_matter"/>
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_mandate"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#authorizes"/>
@@ -4167,22 +4155,19 @@ NOTE 4 Other specializations of this concept than those included in this Interna
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#commissions"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_service"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTopic"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_service"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#commissions"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTopic"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare mandate commissioning a mandated period of care</rdfs:comment>
@@ -4195,7 +4180,7 @@ NOTE 4 Other specializations of this concept than those included in this Interna
 
     <owl:Class rdf:about="https://contsys.org/concept/care_personnel">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/for-coc#personRole"/>
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DnS#role"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_actor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -4220,7 +4205,13 @@ NOTE 4 Other specializations of this concept than those included in this Interna
     <!-- https://contsys.org/concept/care_plan -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_plan">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_issue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
@@ -4247,30 +4238,20 @@ NOTE 4 Other specializations of this concept than those included in this Interna
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_issue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isTheResultOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_planning"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_planning"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#targets"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_objective"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_objective"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#targets"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_goal"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_goal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">dynamic, personalized plan including identified needed healthcare activities, health objectives and healthcare goals, relating to one or more specified health issues in a healthcare process</rdfs:comment>
@@ -4282,7 +4263,7 @@ NOTE 4 Other specializations of this concept than those included in this Interna
     <!-- https://contsys.org/concept/care_planning -->
 
     <owl:Class rdf:about="https://contsys.org/concept/care_planning">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isBasedUpon"/>
@@ -4301,8 +4282,7 @@ NOTE 4 Other specializations of this concept than those included in this Interna
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#evaluates"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare evaluation where healthcare processes are systematically assessed against requirements</rdfs:comment>
@@ -4321,14 +4301,44 @@ NOTE 2 Requirements are defined as a combination of needs and expectations that 
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_actor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#acceptsOrDenies"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/demand_for_care"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#arranges"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/initial_contact"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity_directory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasCarePeriodMandateFor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAbleTobeAssigned"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_period_mandate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isResponsibleFor"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/net/for-coc#socialRecord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isResponsibleFor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4352,7 +4362,31 @@ NOTE 2 Requirements are defined as a combination of needs and expectations that 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/net/for-coc#socialCareProviderActivity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_provider_activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_resource_management"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#provides"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#receives"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/demand_for_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4363,72 +4397,8 @@ NOTE 2 Requirements are defined as a combination of needs and expectations that 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#acceptsOrDenies"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/demand_for_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasCarePeriodMandateFor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAbleTobeAssigned"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_period_mandate"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isResponsibleFor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/net/for-coc#socialCareProviderActivity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_provider_activity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#provides"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#receives"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/demand_for_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#states"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_commitment"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity_directory"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_commitment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare actor that is able to be assigned one or more care period mandates</rdfs:comment>
@@ -4444,22 +4414,20 @@ NOTE 2 Requirements are defined as a combination of needs and expectations that 
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_activity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_issue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#generates"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_information_for_import"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_issue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity_mandate"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity performed by a healthcare provider</rdfs:comment>
@@ -4476,8 +4444,7 @@ NOTE 2 Requirements are defined as a combination of needs and expectations that 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#controlsQualityOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">coordinated activities to direct and control a healthcare organization with regard to quality</rdfs:comment>
@@ -4497,8 +4464,7 @@ NOTE 2 healthcare quality management activities include the establishment of a q
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#direct_controlTheSupply_useOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_resource"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_resource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">activities to direct and control the supply and use of the healthcare resources required to perform healthcare activities</rdfs:comment>
@@ -4513,7 +4479,7 @@ NOTE 2 healthcare quality management activities include the establishment of a q
     <owl:Class rdf:about="https://contsys.org/concept/care_supporting_organization">
         <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Organization"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/net/for-coc#organizationRole"/>
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DnS#role"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
         <rdfs:comment xml:lang="en">healthcare third party having organizational role</rdfs:comment>
         <rdfs:label xml:lang="en">careSupportingOrganization</rdfs:label>
         <rdfs:label xml:lang="es">organización de apoyo a la atención médica</rdfs:label>
@@ -4527,22 +4493,20 @@ NOTE 2 healthcare quality management activities include the establishment of a q
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_actor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_third_party_activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#sendsOut"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/clinical_report"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#performs"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_third_party_activity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#supports"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare actor other than a healthcare provider or the subject of care</rdfs:comment>
@@ -4565,8 +4529,7 @@ NOTE 2 healthcare quality management activities include the establishment of a q
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity_mandate"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity performed by a healthcare third party</rdfs:comment>
@@ -4583,8 +4546,7 @@ NOTE 2 healthcare quality management activities include the establishment of a q
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#influences"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_state"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_state"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity element intended to directly improve or maintain a health state</rdfs:comment>
@@ -4604,26 +4566,23 @@ NOTE 4 healthcare treatment includes all types of activities that intend to infl
     <!-- https://contsys.org/concept/certificate_related_to_a_healthcare_matter -->
 
     <owl:Class rdf:about="https://contsys.org/concept/certificate_related_to_a_healthcare_matter">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#aggregationOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_record_component"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record_component"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#attests"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isIssuedBy"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_actor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_actor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">official document issued by a healthcare actor attesting healthcare matters relating to a subject of care</rdfs:comment>
@@ -4635,12 +4594,11 @@ NOTE 4 healthcare treatment includes all types of activities that intend to infl
     <!-- https://contsys.org/concept/clinical_guideline -->
 
     <owl:Class rdf:about="https://contsys.org/concept/clinical_guideline">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isCentredOn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_issue"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_issue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">set of systematically developed statements to assist the decisions made by healthcare actors about healthcare activities to be performed with regard to specified health issues</rdfs:comment>
@@ -4652,26 +4610,23 @@ NOTE 4 healthcare treatment includes all types of activities that intend to infl
     <!-- https://contsys.org/concept/clinical_pathway -->
 
     <owl:Class rdf:about="https://contsys.org/concept/clinical_pathway">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_condition"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#informs"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/core_carePlan"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/core_carePlan"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#refersTo"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/clinical_guideline"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/clinical_guideline"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">pathway for the healthcare activities informing the content of core care plans</rdfs:comment>
@@ -4688,22 +4643,19 @@ NOTE 4 healthcare treatment includes all types of activities that intend to infl
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_issue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#includes"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_issue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/clinical_process_interest"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/clinical_process_interest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#includes"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare process encompassing all healthcare provider activities and other prescribed healthcare activities that addresses identified or specified health issues</rdfs:comment>
@@ -4732,8 +4684,7 @@ NOTE 7 A relevant distinction exists between the primary input (the subject of c
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isTimeIntervalFor"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/clinical_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/clinical_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">health related period that includes all healthcare activity periods in one clinical process</rdfs:comment>
@@ -4761,8 +4712,7 @@ NOTE 7 A relevant distinction exists between the primary input (the subject of c
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#evaluatesOutcomeOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/clinical_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/clinical_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare evaluation where the effects of a clinical process on a health state are assessed against the target condition and/or a health condition representing the input health state</rdfs:comment>
@@ -4794,7 +4744,7 @@ NOTE 2 The target condition represents a requirement for the clinical process.</
     <!-- https://contsys.org/concept/consent_competence -->
 
     <owl:Class rdf:about="https://contsys.org/concept/consent_competence">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:comment xml:lang="en">capability of the subject of care and/or the subject of care proxy to give informed consent or dissent</rdfs:comment>
         <rdfs:label xml:lang="en">consentCompetence</rdfs:label>
     </owl:Class>
@@ -4808,8 +4758,7 @@ NOTE 2 The target condition represents a requirement for the clinical process.</
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isBasedOn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/observed_condition"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/observed_condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">potential health condition considered by a healthcare actor on the basis of one or more observed conditions</rdfs:comment>
@@ -4822,12 +4771,11 @@ NOTE 2 The target condition represents a requirement for the clinical process.</
     <!-- https://contsys.org/concept/contact -->
 
     <owl:Class rdf:about="https://contsys.org/concept/contact">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#takesPlaceDuring"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/contact_period"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/contact_period"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">interaction between a subject of care and one or more healthcare personnel</rdfs:comment>
@@ -4853,18 +4801,17 @@ NOTE 2 In EN 13940-1:2007 the concept encounter was defined as &apos;contact in 
     <!-- https://contsys.org/concept/continuity_facilitator_mandate -->
 
     <owl:Class rdf:about="https://contsys.org/concept/continuity_facilitator_mandate">
-        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_matter"/>
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_mandate"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTopic"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_thread"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#applies"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_period_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#applies"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_period_mandate"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTopic"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_thread"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare mandate assigning the right and obligation to monitor and coordinate the delivery of care described in those care period mandates related to healthcare matters linked by specific health threads</rdfs:comment>
@@ -4876,7 +4823,7 @@ NOTE 2 In EN 13940-1:2007 the concept encounter was defined as &apos;contact in 
     <!-- https://contsys.org/concept/core_carePlan -->
 
     <owl:Class rdf:about="https://contsys.org/concept/core_carePlan">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:comment xml:lang="en">reusable content and structure for a potential care plan for a specified set of circumstances</rdfs:comment>
         <rdfs:label xml:lang="en">coreCareplan</rdfs:label>
         <skos:note xml:lang="en">NOTE 1 A core care plan is usually based upon knowledge in clinical guidelines (including protocols).
@@ -4891,7 +4838,7 @@ NOTE 3 A core care plan may include advanced formulated schemes for recommended 
     <!-- https://contsys.org/concept/data_repository -->
 
     <owl:Class rdf:about="https://contsys.org/concept/data_repository">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:comment xml:lang="en">an identifiable data storage facility</rdfs:comment>
         <rdfs:label xml:lang="en">dataRepository</rdfs:label>
     </owl:Class>
@@ -4901,7 +4848,19 @@ NOTE 3 A core care plan may include advanced formulated schemes for recommended 
     <!-- https://contsys.org/concept/demand_for_care -->
 
     <owl:Class rdf:about="https://contsys.org/concept/demand_for_care">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#asksFor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_provider_activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#justifies"/>
@@ -4910,23 +4869,8 @@ NOTE 3 A core care plan may include advanced formulated schemes for recommended 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#asksFor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_provider_activity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_matter"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#triggers"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_period_mandate"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_period_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">demand for healthcare provider activities expressed by a healthcare actor</rdfs:comment>
@@ -4957,11 +4901,17 @@ NOTE 3 A core care plan may include advanced formulated schemes for recommended 
     <!-- https://contsys.org/concept/demand_mandate -->
 
     <owl:Class rdf:about="https://contsys.org/concept/demand_mandate">
-        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_matter"/>
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_mandate"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#givesWayTo"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_period_mandate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTopic"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4974,13 +4924,6 @@ NOTE 3 A core care plan may include advanced formulated schemes for recommended 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#permits"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/mandate_to_export_personal_information"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTopic"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_matter"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare mandate implying the right and obligation to demand healthcare activities</rdfs:comment>
@@ -4999,8 +4942,7 @@ NOTE 2 Within certain jurisdictions a generic demand mandate may be explicitly o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/mandated_period_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">clinical report concerning a completed, mandated period of care</rdfs:comment>
@@ -5022,19 +4964,17 @@ NOTE 2 Within certain jurisdictions a generic demand mandate may be explicitly o
     <!-- https://contsys.org/concept/dissent -->
 
     <owl:Class rdf:about="https://contsys.org/concept/dissent">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#limits"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/consent_competence"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/consent_competence"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">refusal to permit specific healthcare activities to be performed</rdfs:comment>
@@ -5059,6 +4999,12 @@ NOTE 2 Within certain jurisdictions a generic demand mandate may be explicitly o
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/health_record_extract"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#aggregationOf"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/electronic_health_record_component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isExtractedFrom"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/sharable_data_repository"/>
             </owl:Restriction>
@@ -5067,13 +5013,6 @@ NOTE 2 Within certain jurisdictions a generic demand mandate may be explicitly o
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isImportedInto"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/sharable_data_repository"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#aggregationOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/electronic_health_record_component"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">health record extract consisting solely of electronic record components</rdfs:comment>
@@ -5104,8 +5043,7 @@ NOTE 2 Within certain jurisdictions a generic demand mandate may be explicitly o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isCentredOn"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_issue"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_issue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">health related period during which healthcare activities are performed to address one health issue as identified by one healthcare professional</rdfs:comment>
@@ -5122,8 +5060,7 @@ NOTE 2 Within certain jurisdictions a generic demand mandate may be explicitly o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#aggregationOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/episode_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/episode_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">group of episodes of care delineated by a health thread</rdfs:comment>
@@ -5147,8 +5084,7 @@ NOTE 4 In EN 13940-1:2007 cumulative episode of care was the preferred term for 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isNotConsistentWith"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/observed_condition"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/observed_condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">considered condition that one or more healthcare professionals have determined not to be consistent with the known observed conditions</rdfs:comment>
@@ -5164,8 +5100,7 @@ NOTE 4 In EN 13940-1:2007 cumulative episode of care was the preferred term for 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_goal"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_goal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">episode of care during which the healthcare activities performed address one specific healthcare goal</rdfs:comment>
@@ -5193,7 +5128,7 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_condition -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_condition">
-        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/health_issue"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#State"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#governsTheChoiceOf"/>
@@ -5223,16 +5158,14 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/health_thread"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#showsTheEvolutionOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_condition"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#relatesTo"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/input_health_state"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#relatesTo"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/input_health_state"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#showsTheEvolutionOf"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">health thread showing the evolution of health conditions during a healthcare process, starting with the health condition that represents the input health state</rdfs:comment>
@@ -5256,7 +5189,7 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_issue -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_issue">
-        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_matter"/>
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/health_condition"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#determines"/>
@@ -5272,7 +5205,7 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_need -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_need">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#State"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#State"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isBackgroundFor"/>
@@ -5288,8 +5221,7 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isDeficitIn"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_state"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_state"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">deficit in the current health state compared to aspects of a desired future health state</rdfs:comment>
@@ -5301,12 +5233,11 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_objective -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_objective">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_need"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_need"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">desired ultimate achievement of a healthcare process addressing health needs</rdfs:comment>
@@ -5344,30 +5275,26 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/data_repository"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAccessedDuring"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAccessedDuring"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_activity_period"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isAccessedDuring"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_activity_period"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isStoredOn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/medium"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#concerns"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/medium"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">data repository regarding the health and healthcare of a subject of care</rdfs:comment>
@@ -5395,19 +5322,17 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_record_extract -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_record_extract">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#extracts"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_record_component"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record_component"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isExtractedFrom"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_record"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">part or all of a health record extracted for the purpose of communication</rdfs:comment>
@@ -5419,7 +5344,7 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_related_period -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_related_period">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Time-Interval"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#aggregationOf"/>
@@ -5442,7 +5367,7 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_state -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_state">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#State"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#State"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isObservedAs"/>
@@ -5458,31 +5383,29 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/health_thread -->
 
     <owl:Class rdf:about="https://contsys.org/concept/health_thread">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#delineates"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/episodes_of_care_bundle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#delineates"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_concern"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#links"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#links"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_thread"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#delineates"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/episodes_of_care_bundle"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#delineates"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_concern"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">defined association between healthcare matters as determined by one or more healthcare actors</rdfs:comment>
@@ -5495,7 +5418,7 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/healthcare -->
 
     <owl:Class rdf:about="https://contsys.org/concept/healthcare">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isFinancedBy"/>
@@ -5530,12 +5453,11 @@ NOTE 4 health concern is closely related to the “concern tracking” based on 
     <!-- https://contsys.org/concept/healthcare_goal -->
 
     <owl:Class rdf:about="https://contsys.org/concept/healthcare_goal">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#contributesToAchivementOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_objective"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_objective"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">desired achievement of one or more healthcare activities, considered as an intermediate operational step to reach a specific health objective</rdfs:comment>
@@ -5590,11 +5512,23 @@ NOTE 3 The subjects of care interact with healthcare professionals in healthcare
     <!-- https://contsys.org/concept/healthcare_process -->
 
     <owl:Class rdf:about="https://contsys.org/concept/healthcare_process">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Process"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasOutput"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/output_health_state"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isDocumentedIn"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPerformedFor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5605,23 +5539,8 @@ NOTE 3 The subjects of care interact with healthcare professionals in healthcare
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPerformedFor"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasOutput"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/output_health_state"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#providesFeedbackTo"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_quality_management"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_quality_management"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">set of interrelated or interacting healthcare activities which transforms inputs into outputs</rdfs:comment>
@@ -5636,7 +5555,7 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
     <!-- https://contsys.org/concept/healthcare_professional_entitlement -->
 
     <owl:Class rdf:about="https://contsys.org/concept/healthcare_professional_entitlement">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:comment xml:lang="en">registered authorization given to a person in order to allow the person to have or perform specific roles in healthcare</rdfs:comment>
         <rdfs:label xml:lang="en">careProfessionalEntitlement</rdfs:label>
     </owl:Class>
@@ -5662,15 +5581,13 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isListedIn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_service_directory"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_service_directory"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isTheResultOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">service that is the result of a healthcare process. Ex. Diagnostic investigation and result report.</rdfs:comment>
@@ -5682,7 +5599,7 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
     <!-- https://contsys.org/concept/healthcare_service_directory -->
 
     <owl:Class rdf:about="https://contsys.org/concept/healthcare_service_directory">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:comment xml:lang="en">directory of the types of healthcare services offered by one or more healthcare providers</rdfs:comment>
         <rdfs:label xml:lang="en">careServiceDirectory</rdfs:label>
     </owl:Class>
@@ -5692,12 +5609,11 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
     <!-- https://contsys.org/concept/informed_consent -->
 
     <owl:Class rdf:about="https://contsys.org/concept/informed_consent">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#requires"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/consent_competence"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/consent_competence"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">permission to perform healthcare activities, voluntarily given by a subject of care having consent competence, or by a subject of care proxy, after having been informed about the purpose and the possible results of the healthcare activities</rdfs:comment>
@@ -5713,8 +5629,7 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#establishes"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/clinical_process"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/clinical_process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">contact during which a clinical process is initiated</rdfs:comment>
@@ -5744,19 +5659,17 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
     <!-- https://contsys.org/concept/mandate_to_export_personal_information -->
 
     <owl:Class rdf:about="https://contsys.org/concept/mandate_to_export_personal_information">
-        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_matter"/>
+        <rdfs:subClassOf rdf:resource="https://contsys.org/concept/care_mandate"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTopic"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#impliesTheRightToCommunicate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_record_extract"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record_extract"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare mandate implying the right to communicate health record extracts</rdfs:comment>
@@ -5772,8 +5685,7 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isDocumentedIn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/professional_health_record"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/professional_health_record"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">set of healthcare activity periods where a healthcare provider is mandated to perform the healthcare activities required to address specific health needs. Ex. A hospital stay, a series of radiotherapy sessions at an outpatient clinic.</rdfs:comment>
@@ -5786,8 +5698,8 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
     <!-- https://contsys.org/concept/medical_device -->
 
     <owl:Class rdf:about="https://contsys.org/concept/medical_device">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Object"/>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_IE_2024_04_01:63653004</oboInOwl:hasDbXref>
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Artifact"/>
+        <oboInOwl:hasDbXref>SNOMEDCT_IE_2024_04_01:63653004</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">any instrument, apparatus, implement, machine, appliance, implant, in vitro reagent or calibrator, software, material or other similar or related article, intended by the manufacturer to be used, alone or in combination, for human beings for one or more of the specific purpose(s) of</rdfs:comment>
         <rdfs:label xml:lang="es">dispositivo médico</rdfs:label>
         <rdfs:label xml:lang="en">medicalDevice</rdfs:label>
@@ -5802,6 +5714,7 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.bioontology.org/ontology/SNOMEDCT/763158003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.hl7.org/fhir/medicinalproduct-definitions.html#MedicinalProduct</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">any substance or combination of substances that can be administered to human beings for treating or preventing disease, with the view to making a medical diagnosis or to restore, correct, or modify physiological functions</rdfs:comment>
+        <rdfs:label xml:lang="en">medicinalProduct</rdfs:label>
         <rdfs:label xml:lang="es">producto medicinal</rdfs:label>
     </owl:Class>
     
@@ -5810,7 +5723,7 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
     <!-- https://contsys.org/concept/medium -->
 
     <owl:Class rdf:about="https://contsys.org/concept/medium">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Object"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Artifact"/>
         <rdfs:comment xml:lang="en">medium: material on which data is stored (e.g., a magnetic disk).</rdfs:comment>
         <rdfs:label xml:lang="es">medio</rdfs:label>
     </owl:Class>
@@ -5833,8 +5746,7 @@ NOTE 2 A healthcare process is not by definition restricted to one healthcare pr
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#address"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_need"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_need"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activities bundle which includes those healthcare activities assessed as needed to address specified health need</rdfs:comment>
@@ -5913,8 +5825,7 @@ NOTE 3 needed healthcare activities are managed in a care plan.</skos:note>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasBeenObservedDuring"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_condition_period"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_condition_period"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5983,7 +5894,7 @@ NOTE 2 An observed condition is a health issue and as such is a representation o
     <!-- https://contsys.org/concept/party -->
 
     <owl:Class rdf:about="https://contsys.org/concept/party">
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DnS#role"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
         <rdfs:comment xml:lang="en">person or group performing a role in relation to the business of a specific community or domain</rdfs:comment>
         <rdfs:label xml:lang="es">grupo</rdfs:label>
     </owl:Class>
@@ -6007,8 +5918,7 @@ NOTE 2 An observed condition is a health issue and as such is a representation o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#representsPotentialAspectsOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_state"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_state"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">possible future or current health condition described by a healthcare actor</rdfs:comment>
@@ -6024,15 +5934,13 @@ NOTE 2 An observed condition is a health issue and as such is a representation o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPrescribedBy"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/careProfessional"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/careProfessional"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#takesPlaceDuring"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/self-care_period"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/self-care_period"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">self-care activity prescribed by a healthcare professional</rdfs:comment>
@@ -6049,8 +5957,7 @@ NOTE 2 An observed condition is a health issue and as such is a representation o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isPrescribedBy"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/careProfessional"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/careProfessional"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="es">actividad de terceros prescrita</rdfs:label>
@@ -6062,8 +5969,9 @@ NOTE 2 An observed condition is a health issue and as such is a representation o
     <!-- https://contsys.org/concept/product -->
 
     <owl:Class rdf:about="https://contsys.org/concept/product">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Physical-Object"/>
+        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Artifact"/>
         <rdfs:comment xml:lang="en">output of an organization that can be produced without any transaction taking place between the organization and the customer</rdfs:comment>
+        <rdfs:label xml:lang="en">product</rdfs:label>
         <rdfs:label xml:lang="es">producto</rdfs:label>
     </owl:Class>
     
@@ -6086,8 +5994,7 @@ NOTE 2 An observed condition is a health issue and as such is a representation o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isIdentifiedBy"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/careProfessional"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/careProfessional"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">observed condition assessed by a healthcare professional concerning the genesis, the course, the severity or the impact of the health state</rdfs:comment>
@@ -6103,8 +6010,7 @@ NOTE 2 An observed condition is a health issue and as such is a representation o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isBasedOn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/professionally_assessed_condition"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/professionally_assessed_condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">possible future or current health condition described by a healthcare actor</rdfs:comment>
@@ -6128,7 +6034,13 @@ NOTE 2 protocols are often presented in a formal manner with respect to the expe
     <!-- https://contsys.org/concept/reason_for_demand_for_care -->
 
     <owl:Class rdf:about="https://contsys.org/concept/reason_for_demand_for_care">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Mental-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isExpressedBy"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isExpressedBy"/>
@@ -6139,13 +6051,6 @@ NOTE 2 protocols are often presented in a formal manner with respect to the expe
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#motivates"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/demand_for_care"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isExpressedBy"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">subject of care or a subject of care proxy&apos;s perception of health needs motivating a demand for care</rdfs:comment>
@@ -6160,15 +6065,14 @@ NOTE 2 protocols are often presented in a formal manner with respect to the expe
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/demand_for_care"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#initiatedDuring"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/contact"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#asksFor"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_commitment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#asksFor"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/care_commitment"/>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#initiatedDuring"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/contact"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">demand for care where a healthcare professional asks a healthcare provider to state a healthcare commitment for a care period mandate</rdfs:comment>
@@ -6182,6 +6086,7 @@ NOTE 2 protocols are often presented in a formal manner with respect to the expe
 
     <owl:Class rdf:about="https://contsys.org/concept/request">
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/demand_for_care"/>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.bioontology.org/ontology/SNOMEDCT/385644000</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">demand for care where a healthcare professional asks a healthcare provider to perform one or more healthcare provider activities</rdfs:comment>
         <rdfs:label xml:lang="es">pedido</rdfs:label>
         <rdfs:label xml:lang="en">request</rdfs:label>
@@ -6192,7 +6097,7 @@ NOTE 2 protocols are often presented in a formal manner with respect to the expe
     <!-- https://contsys.org/concept/resource -->
 
     <owl:Class rdf:about="https://contsys.org/concept/resource">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Non-Physical-Object"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#NonPhysicalObject"/>
         <rdfs:comment xml:lang="en">asset that is utilized or consumed during the execution of a process</rdfs:comment>
         <rdfs:label xml:lang="es">recurso</rdfs:label>
         <skos:note xml:lang="en">NOTE 1 to entry: resources may include diverse entities such as funding, personnel, facilities, capital equipment, tools, and utilities such as power, water, fuel and communication infrastructures.
@@ -6270,7 +6175,7 @@ NOTE 2 to entry: resources may be reusable, renewable or consumable.</skos:note>
     <!-- https://contsys.org/concept/service -->
 
     <owl:Class rdf:about="https://contsys.org/concept/service">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#Event"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event"/>
         <rdfs:comment xml:lang="en">output of an organization with at least one activity necessarily performed between the organization and the customer</rdfs:comment>
         <rdfs:label xml:lang="es">servicio</rdfs:label>
     </owl:Class>
@@ -6282,7 +6187,7 @@ NOTE 2 to entry: resources may be reusable, renewable or consumable.</skos:note>
     <owl:Class rdf:about="https://contsys.org/concept/sharable_data_repository">
         <rdfs:subClassOf rdf:resource="https://contsys.org/concept/data_repository"/>
         <rdfs:comment xml:lang="en">data repository containing exclusively electronic health record extracts, accessible for duly authorized healthcare actors independent of their organizational affiliation and placed under the custody of a healthcare actor</rdfs:comment>
-        <rdfs:label xml:lang="en">sharableDaraRepository</rdfs:label>
+        <rdfs:label xml:lang="en">sharableDataRepository</rdfs:label>
         <skos:note xml:lang="en">NOTE 1 A sharable data repository has to be placed under the custody of a healthcare actor in order to assure and maintain its consistency.
 
 NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electronic health record containing exclusively sharable data, placed under the custody of a healthcare party, to whom a continuity facilitator mandate has been delivered&apos;.</skos:note>
@@ -6340,7 +6245,19 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/consent_competence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_need"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_state"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6369,29 +6286,14 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#seeksToReceive"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#states"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/dissent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#seeksToReceive"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/health_state"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/consent_competence"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6470,24 +6372,23 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
     <!-- https://contsys.org/concept/subject_of_care_desire -->
 
     <owl:Class rdf:about="https://contsys.org/concept/subject_of_care_desire">
-        <rdfs:subClassOf rdf:resource="http://ontology.ip.rm.cnr.it/ontologies/DOLCE-Lite#State"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#State"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#influences"/>
-                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_matter"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/care_mandate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isConsideredDuring"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/healthcare_needs_assessment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isRecordedIn"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/health_record"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isConsideredDuring"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/healthcare_needs_assessment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">desire expressed by the subject of care or the subject of care proxy regarding the performance of certain healthcare activities</rdfs:comment>
@@ -6503,8 +6404,7 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isCausedBy"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare activity delay by the preference of the subject of care, where there is neither a health condition delay nor a resource delay</rdfs:comment>
@@ -6532,6 +6432,18 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/consent_competence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTheRightToTakeDecisionsOnBehalfOf"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/subject_of_care"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#maintains"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/personal_health_record"/>
             </owl:Restriction>
@@ -6540,20 +6452,6 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#states"/>
                 <owl:someValuesFrom rdf:resource="https://contsys.org/concept/dissent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#has"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/consent_competence"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/for-coc#hasTheRightToTakeDecisionsOnBehalfOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/subject_of_care"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">healthcare third party having person role with the right to take decisions on behalf of the subject of care</rdfs:comment>
@@ -6624,13 +6522,93 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/net/for-coc#isConsistentWith"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://contsys.org/concept/observed_condition"/>
+                <owl:someValuesFrom rdf:resource="https://contsys.org/concept/observed_condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">considered condition that one or more healthcare professionals have determined to be the most consistent with the currently known observed conditions</rdfs:comment>
         <rdfs:label xml:lang="es">diagnóstico de trabajo</rdfs:label>
         <rdfs:label xml:lang="en">workingDiagnosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#Event -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#Event">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.bioontology.org/ontology/SNOMEDCT/272379006</oboInOwl:hasDbXref>
+        <rdfs:comment>An occurrence-type is stative or eventive according  to whether it holds of the mereological sum of two of its instances, i.e. if it is cumulative or not. A sitting occurrence is stative since the sum of two sittings is still a sitting occurrence.In general, events differ from situations because they are not assumed to have a description from which they depend. They can be sequenced by some course, but they do not require a description as a unifying criterion.On the other hand, at any time, one can conceive a description that asserts the constraints by which an event of a certian type is such, and in this case, it becomes a situation.Since the decision of designing an explicit description that unifies a perdurant depends on context, task, interest, application, etc., when aligning an ontology do DLP, there can be indecision on where to align an event-oriented class. For example, in the WordNet alignment, we have decided to put only some physical events under &apos;event&apos;, e.g. &apos;discharge&apos;, in order to stress the social orientedness of DLP. But whereas we need to talk explicitly of the criteria by which we conceive discharge events, these will be put under &apos;situation&apos;.Similar considerations are made for the other types of perdurants in DOLCE.A different notion of event (dealing with change) is currently investigated for further developments: being &apos;achievement&apos;, &apos;accomplishment&apos;, &apos;state&apos;, &apos;event&apos;, etc. can be also considered &apos;aspects&apos; of processes or of parts of them. For example, the same process &apos;rock erosion in the Sinni valley&apos; can be conceptualized as an accomplishment (what has brought the current state that e.g. we are trying to explain), as an achievement (the erosion process as the result of a previous accomplishment), as a state (if we collapse the time interval of the erosion into a time point), or as an event (what has changed our focus from a state to another).In the erosion case, we could have good motivations to shift from one aspect to another: a) causation focus, b) effectual focus, c) condensation d) transition (causality).If we want to consider all the aspects of a process together, we need to postulate a unifying descriptive set of criteria (i.e. a &apos;description&apos;), according to which that process is circumstantiated in a &apos;situation&apos;. The different aspects will arise as a parts of a same situation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">something that happens at a given place and time</rdfs:comment>
+        <rdfs:comment>An Event is an anti-cumulative perdurant, i.e., a perdurant that when summed to another perdurant of the same type, gives a perdurant of a different type (examples: closing a door, reaching the top of a mountain, breaking a seal).</rdfs:comment>
+        <rdfs:label xml:lang="en">event</rdfs:label>
+        <rdfs:label xml:lang="es">evento</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#MentalObject">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#NonPhysicalObject"/>
+        <rdfs:comment xml:lang="en">AKA &quot;internal description&quot;. Mental objects are dependent on an intentional agent</rdfs:comment>
+        <rdfs:label xml:lang="en">mentalObject</rdfs:label>
+        <rdfs:label xml:lang="es">objeto mental</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#NonPhysicalObject -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#NonPhysicalObject">
+        <rdfs:label xml:lang="en">nonPhysicalObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#PhysicalObject -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#PhysicalObject">
+        <rdfs:label xml:lang="es">objeto físico</rdfs:label>
+        <rdfs:label xml:lang="en">physicalObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#Process -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#Process">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Stative"/>
+        <rdfs:comment>Within stative occurrences, we distinguish between states and processes     according to homeomericity: sitting is classified as a state but running     is classified as a process, since there are (very short) temporal parts of     a running that are not themselves runnings. In general, processes differ     from situations because they are not assumed to have a description from     which they depend. They can be sequenced by some course, but they do not     require a description as a unifying criterion. On the other hand, at any     time, one can conceive a description that asserts the constraints by which     a process of a certian type is such, and in this case, it becomes a     situation. Since the decision of designing an explicit description that     unifies a perdurant depends on context, task, interest, application, etc.,     when aligning an ontology do DLP, there can be indecision on where to     align a process-oriented class. For example, in the WordNet alignment, we     have decided to put only some physical processes under &apos;process&apos;, e.g.     &apos;organic process&apos;, in order to stress the social orientedness of DLP. But     whereas we need to talk explicitly of the criteria by which we conceive     organic processes, these will be put under &apos;situation&apos;. Similar     considerations are made for the other types of perdurants in DOLCE. A     different notion of event (dealing with change) is currently investigated     for further developments: being &apos;achievement&apos;, &apos;accomplishment&apos;, &apos;state&apos;,     &apos;event&apos;, etc. can be also considered &apos;aspects&apos; of processes or of parts of     them. For example, the same process &apos;rock erosion in the Sinni valley&apos; can     be conceptualized as an accomplishment (what has brought the current state     that e.g. we are trying to explain), as an achievement (the erosion     process as the result of a previous accomplishment), as a state (if we     collapse the time interval of the erosion into a time point), or as an     event (what has changed our focus from a state to another). In the erosion     case, we could have good motivations to shift from one aspect to another:     a) causation focus, b) effectual focus, c) condensation d) transition     (causality). If we want to consider all the aspects of a process together,     we need to postulate a unifying descriptive set of criteria (i.e. a     &apos;description&apos;), according to which that process is circumstantiated in a     &apos;situation&apos;. The different aspects will arise as a parts of a same situation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">set of interrelated or interacting activities that use inputs to deliver an intended result</rdfs:comment>
+        <rdfs:label xml:lang="en">process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#SocialObject -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#SocialObject">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#NonPhysicalObject"/>
+        <rdfs:label xml:lang="en">socialObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#State -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#State">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/DOLCE/OWL/DOLCEbasic#Stative"/>
+        <rdfs:comment>A State is a stative perdurant such that all its parts are of the same type (examples: being sitting, being open, being happy, being red).</rdfs:comment>
+        <rdfs:label xml:lang="en">state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/DOLCE/OWL/DOLCEbasic#Stative -->
+
+    <owl:Class rdf:about="https://w3id.org/DOLCE/OWL/DOLCEbasic#Stative">
+        <rdfs:comment xml:lang="en">expressing a state or condition rather than an activity or event</rdfs:comment>
+        <rdfs:comment>A Stative is a cumulative perdurant, i.e., a perdurant that when summed to another perdurant of the same type, gives a perdurant of the same type (examples: sitting, walking, waiting).</rdfs:comment>
+        <rdfs:label xml:lang="en">stative</rdfs:label>
     </owl:Class>
     
 
@@ -6654,31 +6632,43 @@ NOTE 2 In EN 13940-1:2007 sharable data repository was defined as &apos;electron
     
 
 
+    <!-- http://purl.org/net/for-coc#John_Murphy -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/for-coc#John_Murphy">
+        <rdf:type rdf:resource="https://contsys.org/concept/subject_of_care"/>
+        <fhir:patient.address.city rdf:resource="http://purl.org/net/for-coc#Rome"/>
+        <fhir:patient.address.country rdf:resource="http://purl.org/net/for-coc#Italy"/>
+        <fhir:Patient.forename>John</fhir:Patient.forename>
+        <fhir:Patient.identifier>Z12367X</fhir:Patient.identifier>
+        <fhir:Patient.surname>Murphy</fhir:Patient.surname>
+        <ValueSet:administrative-gender>Male</ValueSet:administrative-gender>
+        <ValueSet:marital-status>Single</ValueSet:marital-status>
+        <Crowding_at_home rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Crowding_at_home>
+        <Lay_off_from_job rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Lay_off_from_job>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/net/for-coc#Mary_Smith -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/for-coc#Mary_Smith">
+        <rdf:type rdf:resource="https://contsys.org/concept/subject_of_care"/>
+        <Anxiety_from_community_violence rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Anxiety_from_community_violence>
+        <Crowding_at_home rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Crowding_at_home>
+        <Inadequate_ventilation rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Inadequate_ventilation>
+        <Lay_off_from_job rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Lay_off_from_job>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/net/for-coc#Rome -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/net/for-coc#Rome">
         <rdf:type rdf:resource="http://purl.org/net/for-coc#city"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/net/for-coc#patient1 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/net/for-coc#patient1">
-        <rdf:type rdf:resource="https://contsys.org/concept/subject_of_care"/>
-        <fhir:patient.address.city rdf:resource="http://purl.org/net/for-coc#Rome"/>
-        <fhir:patient.address.country rdf:resource="http://purl.org/net/for-coc#Italy"/>
-        <fhir:Patient.forename rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Henry</fhir:Patient.forename>
-        <fhir:Patient.identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z12367X</fhir:Patient.identifier>
-        <fhir:Patient.surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Watson</fhir:Patient.surname>
-        <ValueSet:administrative-gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</ValueSet:administrative-gender>
-        <ValueSet:marital-status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Single</ValueSet:marital-status>
-        <Crowding_at_home rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Crowding_at_home>
-        <Lay_off_from_job rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Lay_off_from_job>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
